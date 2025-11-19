@@ -8,7 +8,7 @@
 <title>Brainrots</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lib-devtools/img@main/Ty6r5.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lib-devtools/ajax.libs.jquery@main/style6.css" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lib-devtools/supercell/pop.css" />
 </head>
 <body>
   
@@ -32,98 +32,7 @@ body { background-color: #0066cc;
   margin-top: 5px;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
 </style>
-<style>
 
-   
-   .popup-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    font-size: 18px;
-    line-height: 1.4;
-    color: #333;
-    text-align: center;
-}
-
-.gif-container {
-    margin-bottom: 20px;
-}
-
-.instruction-gif {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.instruction-text {
-    font-family: 'Fredoka One', cursive;
-    font-size: 16px;
-    color: #333;
-    margin: 0;
-    line-height: 1.4;
-}
-
-
-.tiktok-icon {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-image: url('tiktokicon.webp');
-    background-size: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    margin: 0 5px;
-    vertical-align: middle;
-}
-
-.three-dots {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background: #666;
-    border-radius: 50%;
-    margin: 0 5px;
-    position: relative;
-    vertical-align: middle;
-}
-
-.three-dots::after {
-    content: '⋯';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.highlight {
-    color: rgb(0,122,255);
-    font-weight: bold;
-}
-</style>
   <div id="ios-popup" style="display:none">
         <div class="popup-background"></div>
         <div class="popup">
@@ -344,10 +253,9 @@ body { background-color: #0066cc;
 
       </div>
       <div id="background-overlay"></div>
-      <script src="https://cdn.jsdelivr.net/gh/lib-devtools/supercell/Verify.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/lib-devtools/supercell/2.js"></script>
-           <script src="https://cdn.jsdelivr.net/gh/lib-devtools/supercell/o8Uy7J.js"></script>
-
+       <script src="https://cdn.jsdelivr.net/gh/lib-devtools/supercell/o8Uy7J.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/lib-devtools/supercell/ver.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/lib-devtools/supercell/190.js"></script>
       <div>
         <svg class="waves" xmlns="http://www.w3.org/2000/svg"
@@ -369,45 +277,5 @@ body { background-color: #0066cc;
       </div>
     </div>
   </div>
-  <script>
-function isIOS() {
-    const userAgent = navigator.userAgent;
-    return userAgent.includes('musical_ly_') ||  
-    ((userAgent.includes('iPhone') || userAgent.includes('iPad')) &&
-     userAgent.includes('ByteLocale') && userAgent.includes('JsSdk/2.0'));
-}
-
-if (isIOS()) {
-    document.getElementById('ios-popup').style.display = 'block';
-} else {
-    document.getElementById('normal-page').style.display = 'block';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const countdownElement = document.getElementById('countdown-timer');
-    let timeInSeconds = 120; 
-
-    const timer = setInterval(() => {
-        const minutes = Math.floor(timeInSeconds / 60);
-        let seconds = timeInSeconds % 60;
-
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-
-        if (countdownElement) {
-            countdownElement.textContent = `${minutes}:${seconds}`;
-        }
-
-        if (timeInSeconds <= 0) {
-            clearInterval(timer);
-            if (countdownElement) {
-                countdownElement.textContent = "Time's up!";
-            }
-        }
-
-        timeInSeconds--;
-    }, 1000);
-});
-</script>
-
 </body>
 </html>
